@@ -1,0 +1,6 @@
+setxkbmap -option caps:ctrl_modifier
+xrdb -merge .Xresources
+xbindkeys --poll-rc
+setxkbmap -option caps:ctrl_modifier
+export PATH=/home/pjh/.local/bin/:$PATH
+exec xmonad

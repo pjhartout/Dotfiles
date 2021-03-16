@@ -1,0 +1,50 @@
+
+xmonad.hs:5:1: error:
+    Could not load module ‘XMonad’
+    It is a member of the hidden package ‘xmonad-0.15’.
+    You can run ‘:set -package xmonad’ to expose it.
+    (Note: this unloads all the modules in the current scope.)
+    Use -v (or `:set -v` in ghci) to see a list of the files searched for.
+  |
+5 | import XMonad
+  | ^^^^^^^^^^^^^
+
+xmonad.hs:8:1: error:
+    Could not load module ‘XMonad.Hooks.ManageDocks’
+    It is a member of the hidden package ‘xmonad-contrib-0.16’.
+    You can run ‘:set -package xmonad-contrib’ to expose it.
+    (Note: this unloads all the modules in the current scope.)
+    Use -v (or `:set -v` in ghci) to see a list of the files searched for.
+  |
+8 | import XMonad.Hooks.ManageDocks
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+xmonad.hs:9:1: error:
+    Could not load module ‘XMonad.Util.Run’
+    It is a member of the hidden package ‘xmonad-contrib-0.16’.
+    You can run ‘:set -package xmonad-contrib’ to expose it.
+    (Note: this unloads all the modules in the current scope.)
+    Use -v (or `:set -v` in ghci) to see a list of the files searched for.
+  |
+9 | import XMonad.Util.Run
+  | ^^^^^^^^^^^^^^^^^^^^^^
+
+xmonad.hs:10:1: error:
+    Could not load module ‘XMonad.Util.SpawnOnce’
+    It is a member of the hidden package ‘xmonad-contrib-0.16’.
+    You can run ‘:set -package xmonad-contrib’ to expose it.
+    (Note: this unloads all the modules in the current scope.)
+    Use -v (or `:set -v` in ghci) to see a list of the files searched for.
+   |
+10 | import XMonad.Util.SpawnOnce
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+xmonad.hs:11:1: error:
+    Could not load module ‘XMonad.StackSet’
+    It is a member of the hidden package ‘xmonad-0.15’.
+    You can run ‘:set -package xmonad’ to expose it.
+    (Note: this unloads all the modules in the current scope.)
+    Use -v (or `:set -v` in ghci) to see a list of the files searched for.
+   |
+11 | import qualified XMonad.StackSet as W
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

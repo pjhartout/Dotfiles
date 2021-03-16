@@ -1,0 +1,180 @@
+# Starship prompt config file
+# should be in ~/.config/starship.toml
+# Contains modified examples from https://starship.rs/config/
+
+# Don't print a new line at the start of the prompt
+add_newline = false
+
+[battery]
+full_symbol = "🔋"
+charging_symbol = "⚡️"
+discharging_symbol = "🔌"
+show_always = true
+
+[[battery.display]]
+threshold = 10
+style = "bold red"
+
+[[battery.display]]  # "bold red" style when capacity is between 0% and 10%
+threshold = 10
+style = "bold red"
+
+[[battery.display]]  # "bold yellow" style when capacity is between 10% and 30%
+threshold = 30
+style = "bold yellow"
+
+[[battery.display]]  # "bold yellow" style when capacity is between 10% and 30%
+threshold = 100
+style = "green"
+
+[conda]
+format = "[$symbol$environment](dimmed green) "
+
+[directory]
+truncation_length = 100
+truncation_symbol = "…/"
+
+[docker_context]
+format = "via [🐋 $context](blue bold)"
+
+# Because why not
+[elixir]
+symbol = "🔮 "
+
+# Environment variables, configure here for cross-shell compatibility
+[env_var]
+disabled = true
+# variable = "SHELL"
+# default = "/usr/bin/fish"
+
+[gcloud]
+disabled = true
+
+[git_branch]
+symbol = "🌱 "
+truncation_length = 20
+truncation_symbol = ""
+
+[git_commit]
+commit_hash_length = 4
+tag_symbol = "🔖 "
+
+[git_state]
+format = '[\($state( $progress_current of $progress_total)\)]($style) '
+cherry_pick = "[🍒 PICKING](bold red)"
+
+[git_status]
+conflicted = "🏳"
+ahead = "🏎💨 ⇡${count}"
+behind = "😰 ⇣${count}"
+diverged = "😵 ⇕⇡${ahead_count}⇣${behind_count}"
+untracked = "🤷‍"
+stashed = "📦"
+modified = "📝"
+staged = '[++\($count\)](green)'
+renamed = "👅"
+deleted = "🗑"
+
+[golang]
+format = "via [🏎💨 $version](bold cyan) "
+
+[helm]
+format = "via [☸ $version](bold white) "
+
+[hostname]
+ssh_only = false
+format =  "on [$hostname](bold red) "
+# trim_at = ".companyname.com" # Change accordingly
+disabled = false
+
+[java]
+symbol = "☕ "
+
+[jobs]
+symbol = "+ "
+threshold = 1
+
+[julia]
+symbol = "∴ "
+
+[kotlin]
+symbol = "🅺 "
+kotlin_binary = "kotlinc"
+
+[kubernetes]
+format = 'on [☸ $context \($namespace\)](dimmed green) '
+disabled = false
+[kubernetes.context_aliases]
+"dev.local.cluster.k8s" = "dev"
+
+[line_break]
+disabled = false
+
+# [lua]
+# format = "via [🌙 $version](bold blue) "
+
+[memory_usage]
+disabled = false
+format = "$symbol [${ram}( | ${swap})]($style)"
+threshold = -1
+symbol = " "
+style = "bold dimmed green"
+
+[nodejs]
+format = "via [⬢ $version](bold green) "
+
+# Not that I would use it, but a Camel on a prompt can't hurt.
+[ocaml]
+format = "via [🐪 $version]($style) "
+
+[openstack]
+format = "on [$symbol$cloud(\\($project\\))]($style) "
+style = "bold yellow"
+symbol = "☁️ "
+
+[package]
+format = "via [📦    $version](208 bold) "
+
+[perl]
+format = "via [🐘 $version]($style) "
+
+[php]
+format = "via [🔹 $version](147 bold) "
+
+[purescript]
+format = "via [$symbol$version](bold white)"
+
+[python]
+symbol = "🐍 "
+pyenv_version_name = true
+python_binary = "python3"
+
+[ruby]
+symbol = "💎 "
+
+[rust]
+format = "via [$symbol $version](red bold)"
+
+[status]
+map_symbol = true
+disabled = false
+
+[swift]
+format = "via [$symbol  $version](red bold)"
+
+[time]
+disabled = false
+format = '🕙[ $time]($style) '
+
+[username]
+style_user = "white bold"
+style_root = "black bold"
+format = "[$user]($style) "
+disabled = false
+show_always = true
+
+[vagrant]
+format = "via [⍱ $version](bold white) "
+
+[zig]
+symbol = "⚡️ "

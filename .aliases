@@ -1,0 +1,32 @@
+#!/bin/bash
+# This file defines some of the aliases that I use to improve my computing experience.
+# They can be called by any script that needs them, typically .bashrc or .zshrc.
+# Fish aliases are defined separately
+
+alias git-update='ls | xargs -P10 -I{} git -C {} pull'
+
+# VPN shortcuts
+alias vpn-connect='sudo protonvpn connect'
+alias vpn='sudo protonvpn connect -f'
+alias vpn-disconnect='sudo protonvpn disconnect'
+alias vpn-fast='sudo protonvpn connect --fastest'
+alias vpn-random='sudo protonvpn connect --random'
+alias vpn-status='sudo protonvpn status'
+alias vpn-eth='/opt/cisco/anyconnect/bin/vpn'
+alias vpnui-eth='/opt/cisco/anyconnect/bin/vpnui'
+
+# Network
+alias speed='speedtest-cli'
+alias network='sudo iftop'
+
+# redshift
+alias redshift-enable='redshift -t 19000:19000 -b 0.4:0.4'
+
+# update system
+alias update='sudo apt-get update && sudo apt-get upgrade -y && sudo snap refresh'
+alias upgradable='apt list --upgradable'
+
+# start notebook/lab
+alias notebook='jupyter notebook'
+alias lab='jupyter lab'
+alias glog='git log --oneline --decorate --graph --all'
