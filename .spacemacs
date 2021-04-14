@@ -662,7 +662,7 @@ before packages are loaded."
 
   (setq org-refile-targets '(("~/Documents/Git/org/gtd.org" :maxlevel . 3)
                              ("~/Documents/Git/org/someday.org" :maxlevel . 3)
-                             ("~/Documents/Git/org/tickler.org" :maxlevel . 3)))
+                             ("~/Documents/Git/org/today.org" :maxlevel . 3)))
   ;; Add agenda files
   (setq org-agenda-files (list "~/Documents/Git/org/gtd.org"
                                "~/Documents/Git/org/inbox.org"
