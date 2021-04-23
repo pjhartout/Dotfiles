@@ -21,3 +21,11 @@
 #+LATEX_COMPILER: pdflatexorg-mode restarted
 
 This is the repository comprising all of my dotfiles. I explain some of the choices I've made in this [[https://pjhartout.github.io/post/dotfiles/][blog post]].
+
+* Notes
+** Python environment in org source blocks
+Don't forget to add the following source code block in your orf file when developing with python and poetry:
+
+#+begin_src elisp :results silent
+(pyvenv-activate "~/Library/Caches/pypoetry/virtualenvs/name_of_virtualenv")
+#+end_src
