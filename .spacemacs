@@ -101,7 +101,8 @@ This function should only modify configuration layer settings."
      ;; Version control
      ;; ----------------------------------------------------------------
      ;; Git
-     git
+     (git :variables git-enable-magit-todos-plugin t
+          git-enable-magit-gitflow-plugin t)
      version-control
 
      ;; ----------------------------------------------------------------
@@ -117,19 +118,13 @@ This function should only modify configuration layer settings."
      syntax-checking
 
      ;; ----------------------------------------------------------------
-     ;; Email
-     ;; ----------------------------------------------------------------
-     (mu4e :variables
-           mu4e-installation-path "/usr/share/emacs/site-lisp/mu4e")
-
-     ;; ----------------------------------------------------------------
      ;; Appearance
      ;; ----------------------------------------------------------------
      ;; Treemacs: file display
 
-     (treemacs :variables treemacs-use-git-mode 'deferred
-               treemacs-use-follow-mode 't
-               treemacs-use-filewatch-mode t)
+     ;; (treemacs :variables treemacs-use-git-mode 'deferred
+     ;;           treemacs-use-follow-mode 't
+     ;;           treemacs-use-filewatch-mode t)
 
      ;; Theming
      theming
@@ -350,8 +345,8 @@ It should only modify the values of Spacemacs settings."
    dotspacemacs-colorize-cursor-according-to-state t
 
    ;; Default font or prioritized list of fonts.
-   dotspacemacs-default-font '("Source Code Pro"
-                               :size 10.0
+   dotspacemacs-default-font '("Menlo"
+                               :size 12.0
                                :weight normal
                                :width normal)
 
@@ -608,7 +603,13 @@ This function defines the environment variables for your Emacs session. By
 default it calls `spacemacs/load-spacemacs-env' which loads the environment
 variables declared in `~/.spacemacs.env' or `~/.spacemacs.d/.spacemacs.env'.
 See the header of this file for more information."
-  (spacemacs/load-spacemacs-env))
+  (spacemacs/load-spacemacs-env)
+  (setenv "PATH" (concat (getenv "PATH") ":/Library/TeX/texbin/"))
+  (setq exec-path (append exec-path '("/Library/TeX/texbin/")))
+
+  (setenv "PATH" (concat (getenv "PATH") ":~/.poetry/bin"))
+  (setq exec-path (append exec-path '(":~/.poetry/bin")))
+)
 
 (defun dotspacemacs/user-init ()
   "Initialization for user code:
@@ -643,8 +644,7 @@ This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
-  ;; Emails
-  (org-babel-load-file (concat user-emacs-directory "mu4e.org"))
+  (setq beacon-mode t)
   ;; Delete selection mode
   (delete-selection-mode t)
   ;; Python
@@ -751,6 +751,7 @@ This function is called at the very end of Spacemacs initialization."
      ("FIXME" . "#dc752f")
      ("XXX+" . "#dc752f")
      ("\\?\\?\\?+" . "#dc752f")))
+ '(magit-git-executable "/usr/bin/git")
  '(package-selected-packages
    '(exec-path-from-shell yaml-mode insert-shebang flycheck-bashate fish-mode company-shell web-mode tagedit slim-mode scss-mode sass-mode pug-mode impatient-mode helm-css-scss haml-mode emmet-mode counsel-css company-web web-completion-data add-node-modules-path toml-mode ron-mode racer helm-gtags flycheck-rust cargo rust-mode csv-mode emojify solarized-theme wakatime-mode jedi virtualenv virtualenvwrapper yapfify xcscope stickyfunc-enhance sphinx-doc pytest py-isort pippel pyvenv pip-requirements live-py-mode deferred ggtags dash-functional cython-mode counsel-gtags company blacken pythonic mu4e-views swiper ws-butler writeroom-mode visual-fill-column winum volatile-highlights vi-tilde-fringe uuidgen undo-tree treemacs-projectile treemacs-persp treemacs-icons-dired treemacs ht pfuture toc-org symon symbol-overlay string-inflection spaceline-all-the-icons all-the-icons memoize spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode password-generator paradox spinner overseer org-superstar open-junk-file nameless move-text macrostep lorem-ipsum link-hint indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation helm-xref helm-themes helm-swoop helm-purpose window-purpose imenu-list helm-projectile helm-org helm-mode-manager helm-make helm-ls-git helm-flx helm-descbinds helm-ag google-translate golden-ratio flycheck-package package-lint flycheck flycheck-elsa flx-ido flx fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired f evil-tutor evil-textobj-line evil-surround evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-escape evil-ediff evil-cleverparens smartparens evil-args evil-anzu anzu eval-sexp-fu emr iedit clang-format projectile paredit list-utils pkg-info epl elisp-slime-nav editorconfig dumb-jump dash s dired-quick-sort devdocs define-word column-enforce-mode clean-aindent-mode centered-cursor-mode auto-highlight-symbol auto-compile packed aggressive-indent ace-window ace-link ace-jump-helm-line helm avy helm-core popup which-key use-package pcre2el org-plus-contrib hydra lv hybrid-mode font-lock+ evil goto-chg dotenv-mode diminish bind-map bind-key async))
  '(pdf-view-midnight-colors '("#b2b2b2" . "#292b2e"))
