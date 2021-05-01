@@ -15,7 +15,6 @@ add_newline = false
 full_symbol = "🔋"
 charging_symbol = "⚡️"
 discharging_symbol = "🔌"
-show_always = true
 
 [[battery.display]]
 threshold = 10
@@ -34,6 +33,7 @@ threshold = 100
 style = "green"
 
 [conda]
+disabled = true
 format = "[$symbol$environment](dimmed green) "
 
 [directory]
