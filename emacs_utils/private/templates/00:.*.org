@@ -22,3 +22,12 @@
 * Header 1 [%]
 ** header 2
 + Unordered list
+  #+begin_src elisp :results silent
+(pyvenv-activate "~/path/to/virtualenvs/venv-name/")
+  #+end_src
+
+#+begin_src python
+# Shows in the results of the org file
+def return_obj(obj):
+    return obj
+#+end_src
