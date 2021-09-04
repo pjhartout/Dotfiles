@@ -9,10 +9,10 @@
 
 import pytest
 
-test_data = list()
+test_data = [(in1, in2, expected)]
 
 
-@pytest.mark.parametrize("out1, out2, expected", sample_func)
-def test_sample_func(arg1):
+@pytest.mark.parametrize("in1, in2, expected", test_data)
+def test_sample_func(in1, in2, expected):
     """test sample func"""
-    assert arg1 == "test"
+    assert sample_func(in1, in2) == expected
