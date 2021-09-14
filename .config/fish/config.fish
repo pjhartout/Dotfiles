@@ -1,11 +1,13 @@
 
-# STARTUP #
-function fish_greeting
-    # Show system info
-    pfetch
-end
+# # STARTUP #
+# function fish_greeting
+#     # Show system info
+#     pfetch
+# end
 
-set PATH $PATH /home/pjh/.poetry/bin/
+set -gx HTTPS_PROXY http://nibr-proxy.global.nibr.novartis.net:2011
+set -gx HTTP_PROXY http://nibr-proxy.global.nibr.novartis.net:2011
+set -x PATH $PATH:/home/hartoph1/.local/bin
 
 # ALIASES #
 # VPN shortcuts
@@ -72,3 +74,12 @@ alias cgcc='rm -rf ~/.cache/google-chrome/'
 
 # SETTING THE STARSHIP PROMPT #
 starship init fish | source
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+eval /Users/hartoph1/.anaconda3/bin/conda "shell.fish" "hook" $argv | source
+# <<< conda initialize <<<
+
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/hartoph1/Applications/google-cloud-sdk/path.fish.inc' ]; . '/Users/hartoph1/Applications/google-cloud-sdk/path.fish.inc'; end

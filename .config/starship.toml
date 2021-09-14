@@ -12,6 +12,7 @@
 add_newline = false
 
 [battery]
+disabled = true
 full_symbol = "🔋"
 charging_symbol = "⚡️"
 discharging_symbol = "🔌"
@@ -42,10 +43,12 @@ truncation_length = 1
 truncation_symbol = "…/"
 
 [docker_context]
+disabled=true
 format = "via [🐋 $context](blue bold)"
 
 # Because why not
 [elixir]
+disabled = true
 symbol = "🔮 "
 
 # Environment variables, configure here for cross-shell compatibility
@@ -53,23 +56,28 @@ symbol = "🔮 "
 disabled = true
 # variable = "SHELL"
 # default = "/usr/bin/fish"
+
 [gcloud]
 disabled = true
 
 [git_branch]
+disabled = true
 symbol = "🌱"
 truncation_length = 50
 truncation_symbol = "…"
 
 [git_commit]
+disabled = true
 commit_hash_length = 4
 tag_symbol = "🔖 "
 
 [git_state]
+disabled = true
 format = '[\($state( $progress_current of $progress_total)\)]($style) '
 cherry_pick = "[🍒 PICKING](bold red)"
 
 [git_status]
+disabled = true
 conflicted = "🏳"
 ahead = "🏎💨 ⇡${count}"
 behind = "😰 ⇣${count}"
@@ -82,105 +90,126 @@ renamed = "👅"
 deleted = "🗑"
 
 [golang]
+disabled = true
 format = "via [🏎💨 $version](bold cyan) "
 
 [helm]
+disabled = true
 format = "via [☸ $version](bold white) "
 
 [hostname]
+disabled = true
 ssh_only = false
 format =  "on [$hostname](bold red) "
 # trim_at = ".companyname.com" # Change accordingly
-disabled = false
 
 [java]
+disabled = true
 symbol = "☕ "
 
 [jobs]
+disabled = true
 symbol = "+ "
 threshold = 1
 
 [julia]
+disabled = true
 symbol = "∴ "
 
 [kotlin]
+disabled = true
 symbol = "🅺 "
 kotlin_binary = "kotlinc"
 
 [kubernetes]
+disabled = true
 format = 'on [☸ $context \($namespace\)](dimmed green) '
-disabled = false
+
 [kubernetes.context_aliases]
 "dev.local.cluster.k8s" = "dev"
 
 [line_break]
-disabled = false
+disabled = true
 
-# [lua]
-# format = "via [🌙 $version](bold blue) "
+[lua]
+disabled = true
+format = "via [🌙 $version](bold blue) "
 
 [memory_usage]
-disabled = false
+disabled = true
 format = " $symbol [${ram}( | ${swap})]($style)"
 threshold = -1
 symbol = ""
 style = "bold dimmed green"
 
 [nodejs]
+disabled = true
 format = "via [⬢ $version](bold green)"
 
 # Not that I would use it, but a Camel on a prompt can't hurt.
 [ocaml]
+disabled = true
 format = "via [🐪 $version]($style) "
 
 [openstack]
+disabled = true
 format = "on [$symbol$cloud(\\($project\\))]($style) "
 style = "bold yellow"
 symbol = "☁️ "
 
 [package]
+disabled=true
 format = "via [📦    $version](208 bold) "
 
 [perl]
+disabled = true
 format = "via [🐘 $version]($style) "
 
 [php]
+disabled = true
 format = "via [🔹 $version](147 bold) "
 
 [purescript]
+disabled = true
 format = "via [$symbol$version](bold white)"
 
 [python]
+disabled = true
 symbol = "🐍 "
 pyenv_version_name = true
 python_binary = "python3"
 
 [ruby]
+disabled = true
 symbol = "💎 "
 
 [rust]
+disabled = true
 format = "via [$symbol $version](red bold)"
 
 [status]
 map_symbol = true
-disabled = false
+disabled = true
 
 [swift]
+disabled = true
 format = "via [$symbol  $version](red bold)"
 
 [time]
-disabled = false
+disabled = true
 format = '🕙[ $time]($style) '
 
 [username]
 style_user = "white bold"
 style_root = "black bold"
 format = "[$user]($style) "
-disabled = false
+disabled = true
 show_always = true
 
 [vagrant]
+disabled = true
 format = "via [⍱ $version](bold white) "
 
 [zig]
+disabled = true
 symbol = "⚡️ "
